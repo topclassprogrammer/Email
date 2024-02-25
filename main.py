@@ -46,7 +46,7 @@ class Email:
             latest_email_uid = data[0].split()[-1]
             result, data = mail.uid('fetch', latest_email_uid, '(RFC822)')
         raw_email = data[0][1]
-        email_message = message_from_string(raw_email)
+        email_message = message_from_string(raw_email.decode())
         return email_message
 
 
